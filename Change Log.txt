@@ -1,0 +1,59 @@
+1.0.0 : 
+Desc: SA with conflict-based-swap and reheat based on the last move, inspired by Lewis (2006).
+Capabilities:
+9x9: Yes
+16x16: No
+Benchmark (9x9 kaggle):
+Solved (cost == 0): 9996/10000
+Matched expected solution: 9996/10000
+Average time: 0.0686s
+Max time: 5.0000s
+Min time: 0.0000s
+1st Quartile (Q1): 0.0156s
+3rd Quartile (Q3): 0.0469s
+-------------------------------------------------------------------------------------------------------------------
+1.1.0 : (Abandoned)
+Desc: Expand capabilities to include nxn and change reheat to be based on the last improvement
+
+### Issues: takes too long to solve 16x16s and stops improving after a certain point, even with reheat ###
+
+Capabilities:
+9x9: Yes
+16x16: Unsatisfactory
+Benchmark (9x9 Kaggle): unsettled due to inability to create a finetuned model
+---------------------------------------------------------------------------------------------------------------------
+1.2.0:
+Desc: Rework temperature based on geometric cost-based reheating based on Abramson et al. (1996)
+Capabilities:
+9x9: Yes
+16x16: Unsatisfactory
+Benchmark (9x9 Kaggle):
+Solved (cost == 0): 9994/10000
+Matched expected solution: 9994/10000
+Average time: 0.0694s
+Max time: 5.0000s
+Min time: 0.0000s
+1st Quartile (Q1): 0.0000s
+3rd Quartile (Q3): 0.0469s
+---------------------------------------------------------------------------------------------------------------------
+1.3.0:
+Desc: Apply VNS style swapping between random and conflict based.
+      Apply candidate based constructive heuristics and candidate-based swapping for conflict-to-random swap.
+Capabilities:
+9x9: Yes
+16x16: Unsatisfactory
+Benchmark (9x9 Kaggle):
+Solved (cost == 0): 10000/10000
+Matched expected solution: 10000/10000
+Average time: 0.0620s
+Max time: 4.3125s
+Min time: 0.0000s
+1st Quartile (Q1): 0.0000s
+3rd Quartile (Q3): 0.0625s
+---------------------------------------------------------------------------------------------------------------------
+Other Possible Fixes:
+Conflict-missing based swap
+Pure Random Swaps
+Add candidate to random swaps
+
+
