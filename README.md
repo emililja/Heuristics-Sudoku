@@ -32,7 +32,7 @@ Empty cells within each subgrid are populated in randomized order by prioritizin
 ### 2. Adaptive VNS + SA Neighborhood Swaps
 At temperature $T$, the solver dynamically balances broad exploration and targeted conflict resolution via an adaptive probability:
 
-$$p_{\text{conflict}}(T) = \text{clip}\!\left(1 - \frac{T}{T_0},\; 0.1,\; 0.9\right)$$
+$$p_{\text{conflict}}(T) = \min\left(0.9, \max\left(0.1, 1 - \frac{T}{T_0}\right)\right)$$
 
 * **Exploration Neighborhood $\mathcal{N}_1$ (Random Intra-Box Swap):** Selected with probability $1 - p_{\text{conflict}}(T)$. Picks a random mutable cell $u \notin F$ and swaps it with a random mutable peer $v \neq u$ in the same $n \times n$ box.
 * **Exploitation Neighborhood $\mathcal{N}_2$ (Conflict-Driven, Domain-Filtered VNS Swap):** Selected with probability $p_{\text{conflict}}(T)$. Identifies mutable cells actively causing row or column duplicates, selects a conflicted cell $u$, and filters intra-box mutable peers $v$ to those mutually compatible with initial clue domains:
