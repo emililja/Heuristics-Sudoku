@@ -71,6 +71,6 @@ The repository also includes precomputed valid boards (`precomputed_9x9.csv` thr
 
 ---
 
-## Final Results for 10,000 Kaggle 9×9 Puzzles
+## Results Comparison for Different Methods (1000 Kaggle 9×9 Puzzles)
 
 <img width="1389" height="539" alt="image" src="https://github.com/user-attachments/assets/8f98cf01-466b-493b-bdb8-8b1b79995899" />
